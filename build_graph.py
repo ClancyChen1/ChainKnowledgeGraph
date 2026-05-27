@@ -7,17 +7,19 @@
 
 import os
 import json
+from collections import defaultdict
 from py2neo import Graph
 
 class MedicalGraph:
     def __init__(self):
         cur_dir = os.path.dirname(os.path.abspath(__file__))
         self.data_dir = os.path.join(cur_dir, 'data')
+        neo4j_uri = os.getenv("NEO4J_URI", "bolt://127.0.0.1:7687")
+        neo4j_user = os.getenv("NEO4J_USER", "neo4j")
+        neo4j_password = os.getenv("NEO4J_PASSWORD", "12345678")
         self.g = Graph(
-            host="127.0.0.1",
-            http_port=7474,
-            user="neo4j",
-            password="123456"
+            neo4j_uri,
+            auth=(neo4j_user, neo4j_password)
         )
 
     def load_data(self, filename):

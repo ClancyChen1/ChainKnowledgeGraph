@@ -61,6 +61,12 @@
 2、项目运行:  
 python build_graph.py  
 
+3、安装与运行文档：  
+不同操作系统的依赖安装、Neo4j 启动、数据导入和常见报错处理请参考：  
+1）Linux 版：[docs/install/linux.md](docs/install/linux.md)  
+2）Windows 版：[docs/install/windows.md](docs/install/windows.md)  
+3）macOS 版：[docs/install/macos.md](docs/install/macos.md)  
+
 
 
 #  四、项目总结
